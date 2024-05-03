@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-bs-theme="dark"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Book Now</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="../style.css"
+    />
+  </head>
+  <script
+    src="https://kit.fontawesome.com/7b5074c7c9.js"
+    crossorigin="anonymous"
+  ></script>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-black px-3 mb-5">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        id="nav"
+        class="collapse navbar-collapse"
+      >
+        <ul class="navbar-nav fw-bold">
+          <li class="nav-item">
+            <a
+              href="../index.html"
+              class="nav-link"
+              >Home</a
+            >
+          </li>
+          <!-- <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link"
+              >Services</a
+            >
+          </li> -->
+          <li class="nav-item">
+            <a
+              href="./about.html"
+              class="nav-link"
+              >About</a
+            >
+          </li>
+        </ul>
+      </div>
+      <a
+        class="btn btn-lg text-bg-info ms-auto me-3 fw-bold"
+        href="./contact.html"
+      >
+        Contact Us
+      </a>
+    </nav>
+    <form
+      class="container bg-black rounded shadow-lg col-8 mx-auto mb-3 p-3"
+      action=""
+    >
+      <h3 class="text-center my-3 hero-ice-blue-text fs-1">Book Now</h3>
+      <div class="p-3 mb-5">
+        <h3 class="fw-bold mb-3">Your Contact Info</h3>
+        <div class="row mb-4">
+          <div class="col">
+            <input
+              id="first-name"
+              name="first-name"
+              type="text"
+              class="form-control"
+              placeholder="First name"
+              aria-label="First name"
+            />
+          </div>
+          <div class="col">
+            <input
+              id="last-name"
+              name="last-name"
+              type="text"
+              class="form-control"
+              placeholder="Last name"
+              aria-label="Last name"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              aria-label="Email"
+            />
+          </div>
+          <div class="col">
+            <input
+              id="phone-number"
+              name="phone-number"
+              type="tel"
+              class="form-control"
+              placeholder="Phone Number"
+              aria-label="Phone Number"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="input-group mb-4">
+        <label
+          class="input-group-text fw-bold"
+          for="service-requested"
+          >Service Requested</label
+        >
+        <select
+          class="form-select"
+          id="service-requested"
+          name="service-requested"
+        >
+          <option selected></option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="4">Four</option>
+          <option value="5">Five</option>
+          <option value="6">Six</option>
+          <option value="7">Seven</option>
+          <option value="8">Eight</option>
+          <option value="9">Nine</option>
+        </select>
+      </div>
+      <div class="row mb-4">
+        <div class="col">
+          <input
+            id="location"
+            name="location"
+            type="text"
+            class="form-control"
+            placeholder="Location of event"
+            aria-label="Location of event"
+          />
+        </div>
+      </div>
+      <div class="input-group mb-4">
+        <span class="input-group-text fw-bold">From</span>
+        <input
+          type="date"
+          id="date-from"
+          name="date-from"
+          aria-label="From"
+          class="form-control"
+          placeholder="From"
+        />
+        <span class="input-group-text fw-bold">To (blank if same day)</span>
+        <input
+          type="date"
+          id="date-to"
+          name="date-to"
+          aria-label="To"
+          class="form-control"
+        />
+      </div>
+      <div class="input-group mb-4">
+        <span class="input-group-text fw-bold">Start Time</span>
+        <input
+          type="time"
+          name="start-time"
+          id="start-time"
+          aria-label="Start Time"
+          class="form-control"
+        />
+        <span class="input-group-text fw-bold">End Time</span>
+        <input
+          type="time"
+          name="end-time"
+          id="end-time"
+          aria-label="End Time"
+          class="form-control"
+        />
+      </div>
+      <div class="input-group mb-4">
+        <label
+          class="input-group-text fw-bold"
+          for="employees"
+          >Number of employees</label
+        >
+        <select
+          class="form-select"
+          id="employees"
+        >
+          <option selected></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+        <label
+          class="input-group-text fw-bold"
+          for="carry-status"
+          >Carry Status</label
+        >
+        <select
+          class="form-select"
+          id="carry-status"
+        >
+          <option selected></option>
+          <option value="1">Armed</option>
+          <option value="2">Unarmed</option>
+        </select>
+      </div>
+
+      <div
+        class="g-recaptcha"
+        data-sitekey="6Ld8aKQpAAAAAC6H49F10Zs8HT6sTZU4TsVQNmuq"
+      ></div>
+      <div class="d-grid">
+        <button
+          type="button"
+          class="btn btn-info fw-bold mt-3"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+    <footer
+      class="mw-100 py-4 bg-black shadow text-center bottom-0 fs-6 mt-5 d-flex justify-content-around align-items-center"
+    >
+      <a href=""><i class="fa-brands fa-instagram"></i></a>
+      <a href=""><i class="fa-brands fa-facebook"></i></a>
+      <a href=""><i class="fa-solid fa-envelope"></i></a>
+    </footer>
+  </body>
+</html>
