@@ -20,11 +20,15 @@
       rel="stylesheet"
       href="../style.css"
     />
+    <script
+      src="https://kit.fontawesome.com/7b5074c7c9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="../submission.js"
+      defer
+    ></script>
   </head>
-  <script
-    src="https://kit.fontawesome.com/7b5074c7c9.js"
-    crossorigin="anonymous"
-  ></script>
   <body>
     <nav class="navbar navbar-expand-lg bg-black px-3 mb-5">
       <button
@@ -75,7 +79,8 @@
     </nav>
     <form
       class="container bg-black rounded shadow-lg col-8 mx-auto mb-3 p-3"
-      action=""
+      method="post"
+      action="https://script.google.com/macros/s/AKfycbyfk3ornb59tFmi7KpHaj0zSZAVmZqW_2Ty9rieUzxJhJQNJWCkZyrHteyw2YT-H_2S6w/exec"
     >
       <h3 class="text-center my-3 hero-ice-blue-text fs-1">Book Now</h3>
       <div class="p-3 mb-5">
@@ -84,7 +89,7 @@
           <div class="col">
             <input
               id="first-name"
-              name="first-name"
+              name="First Name"
               type="text"
               class="form-control"
               placeholder="First name"
@@ -94,7 +99,7 @@
           <div class="col">
             <input
               id="last-name"
-              name="last-name"
+              name="Last Name"
               type="text"
               class="form-control"
               placeholder="Last name"
@@ -106,7 +111,7 @@
           <div class="col">
             <input
               id="email"
-              name="email"
+              name="Email"
               type="email"
               class="form-control"
               placeholder="Email"
@@ -116,7 +121,7 @@
           <div class="col">
             <input
               id="phone-number"
-              name="phone-number"
+              name="Phone Number"
               type="tel"
               class="form-control"
               placeholder="Phone Number"
@@ -135,7 +140,7 @@
         <select
           class="form-select"
           id="service-requested"
-          name="service-requested"
+          name="Service"
         >
           <option selected></option>
           <option value="1">One</option>
@@ -153,7 +158,7 @@
         <div class="col">
           <input
             id="location"
-            name="location"
+            name="Location"
             type="text"
             class="form-control"
             placeholder="Location of event"
@@ -166,7 +171,7 @@
         <input
           type="date"
           id="date-from"
-          name="date-from"
+          name="From"
           aria-label="From"
           class="form-control"
           placeholder="From"
@@ -175,7 +180,7 @@
         <input
           type="date"
           id="date-to"
-          name="date-to"
+          name="To"
           aria-label="To"
           class="form-control"
         />
@@ -184,7 +189,7 @@
         <span class="input-group-text fw-bold">Start Time</span>
         <input
           type="time"
-          name="start-time"
+          name="Start Time"
           id="start-time"
           aria-label="Start Time"
           class="form-control"
@@ -192,7 +197,7 @@
         <span class="input-group-text fw-bold">End Time</span>
         <input
           type="time"
-          name="end-time"
+          name="End Time"
           id="end-time"
           aria-label="End Time"
           class="form-control"
@@ -207,6 +212,7 @@
         <select
           class="form-select"
           id="employees"
+          name="# of Employees"
         >
           <option selected></option>
           <option value="1">1</option>
@@ -224,10 +230,11 @@
         <select
           class="form-select"
           id="carry-status"
+          name="Carry Status"
         >
           <option selected></option>
-          <option value="1">Armed</option>
-          <option value="2">Unarmed</option>
+          <option value="Armed">Armed</option>
+          <option value="Unarmed">Unarmed</option>
         </select>
       </div>
 
@@ -237,7 +244,7 @@
       ></div>
       <div class="d-grid">
         <button
-          type="button"
+          type="submit"
           class="btn btn-info fw-bold mt-3"
         >
           Submit
