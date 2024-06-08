@@ -28,22 +28,23 @@
       src="../submission.js"
       defer
     ></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
   </head>
-  <body>
+  <body class="vh-100">
     <nav class="navbar navbar-expand-lg bg-black px-3 mb-5">
       <button
         class="navbar-toggler"
         type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
+        data-bs-toggle="collapse"
+        data-bs-target="#iceman-nav"
+        aria-controls="iceman-nav"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div
-        id="nav"
+        id="iceman-nav"
         class="collapse navbar-collapse"
       >
         <ul class="navbar-nav fw-bold">
@@ -77,186 +78,236 @@
         Contact Us
       </a>
     </nav>
-    <form
-      class="container bg-black rounded shadow-lg col-8 mx-auto mb-3 p-3"
-      method="post"
-      action="https://script.google.com/macros/s/AKfycbyfk3ornb59tFmi7KpHaj0zSZAVmZqW_2Ty9rieUzxJhJQNJWCkZyrHteyw2YT-H_2S6w/exec"
-    >
-      <h3 class="text-center my-3 hero-ice-blue-text fs-1">Book Now</h3>
-      <div class="p-3 mb-5">
-        <h3 class="fw-bold mb-3">Your Contact Info</h3>
-        <div class="row mb-4">
-          <div class="col">
-            <input
-              id="first-name"
-              name="First Name"
-              type="text"
-              class="form-control"
-              placeholder="First name"
-              aria-label="First name"
-            />
-          </div>
-          <div class="col">
-            <input
-              id="last-name"
-              name="Last Name"
-              type="text"
-              class="form-control"
-              placeholder="Last name"
-              aria-label="Last name"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <input
-              id="email"
-              name="Email"
-              type="email"
-              class="form-control"
-              placeholder="Email"
-              aria-label="Email"
-            />
-          </div>
-          <div class="col">
-            <input
-              id="phone-number"
-              name="Phone Number"
-              type="tel"
-              class="form-control"
-              placeholder="Phone Number"
-              aria-label="Phone Number"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="input-group mb-4">
-        <label
-          class="input-group-text fw-bold"
-          for="service-requested"
-          >Service Requested</label
-        >
-        <select
-          class="form-select"
-          id="service-requested"
-          name="Service"
-        >
-          <option selected></option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-          <option value="4">Four</option>
-          <option value="5">Five</option>
-          <option value="6">Six</option>
-          <option value="7">Seven</option>
-          <option value="8">Eight</option>
-          <option value="9">Nine</option>
-        </select>
-      </div>
-      <div class="row mb-4">
-        <div class="col">
-          <input
-            id="location"
-            name="Location"
-            type="text"
-            class="form-control"
-            placeholder="Location of event"
-            aria-label="Location of event"
-          />
-        </div>
-      </div>
-      <div class="input-group mb-4">
-        <span class="input-group-text fw-bold">From</span>
-        <input
-          type="date"
-          id="date-from"
-          name="From"
-          aria-label="From"
-          class="form-control"
-          placeholder="From"
-        />
-        <span class="input-group-text fw-bold">To (blank if same day)</span>
-        <input
-          type="date"
-          id="date-to"
-          name="To"
-          aria-label="To"
-          class="form-control"
-        />
-      </div>
-      <div class="input-group mb-4">
-        <span class="input-group-text fw-bold">Start Time</span>
-        <input
-          type="time"
-          name="Start Time"
-          id="start-time"
-          aria-label="Start Time"
-          class="form-control"
-        />
-        <span class="input-group-text fw-bold">End Time</span>
-        <input
-          type="time"
-          name="End Time"
-          id="end-time"
-          aria-label="End Time"
-          class="form-control"
-        />
-      </div>
-      <div class="input-group mb-4">
-        <label
-          class="input-group-text fw-bold"
-          for="employees"
-          >Number of employees</label
-        >
-        <select
-          class="form-select"
-          id="employees"
-          name="# of Employees"
-        >
-          <option selected></option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-        <label
-          class="input-group-text fw-bold"
-          for="carry-status"
-          >Carry Status</label
-        >
-        <select
-          class="form-select"
-          id="carry-status"
-          name="Carry Status"
-        >
-          <option selected></option>
-          <option value="Armed">Armed</option>
-          <option value="Unarmed">Unarmed</option>
-        </select>
-      </div>
-
+    <div class="d-flex flex-column h-100 justify-content-between">
       <div
-        class="g-recaptcha"
-        data-sitekey="6Ld8aKQpAAAAAC6H49F10Zs8HT6sTZU4TsVQNmuq"
-      ></div>
-      <div class="d-grid">
-        <button
-          type="submit"
-          class="btn btn-info fw-bold mt-3"
+        id="book-now"
+        class="container-fluid mh-100"
+      >
+        <form
+          class="container bg-black rounded shadow-lg col-8 mx-auto mb-3 p-3 w-auto mh-100"
+          method="post"
+          action="https://script.google.com/macros/s/AKfycbyfk3ornb59tFmi7KpHaj0zSZAVmZqW_2Ty9rieUzxJhJQNJWCkZyrHteyw2YT-H_2S6w/exec"
         >
-          Submit
-        </button>
+          <h3 class="text-center my-3 hero-ice-blue-text fs-1">Book Now</h3>
+          <hr />
+          <div class="p-3 mb-2">
+            <h3 class="fw-bold mb-3">Your Contact Info</h3>
+            <div class="row mb-4">
+              <div class="col">
+                <input
+                  id="first-name"
+                  name="First Name"
+                  type="text"
+                  class="form-control"
+                  placeholder="First name"
+                  aria-label="First name"
+                />
+              </div>
+              <div class="col">
+                <input
+                  id="last-name"
+                  name="Last Name"
+                  type="text"
+                  class="form-control"
+                  placeholder="Last name"
+                  aria-label="Last name"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <input
+                  id="email"
+                  name="Email"
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  aria-label="Email"
+                />
+              </div>
+              <div class="col">
+                <input
+                  id="phone-number"
+                  name="Phone Number"
+                  type="tel"
+                  class="form-control"
+                  placeholder="Phone Number"
+                  aria-label="Phone Number"
+                />
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="my-3">
+            <label
+              class="form-label fw-bold"
+              for="service-requested"
+              >Service Requested</label
+            >
+            <select
+              class="form-select"
+              id="service-requested"
+              name="Service"
+            >
+              <option selected></option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+              <option value="4">Four</option>
+              <option value="5">Five</option>
+              <option value="6">Six</option>
+              <option value="7">Seven</option>
+              <option value="8">Eight</option>
+              <option value="9">Nine</option>
+            </select>
+          </div>
+          <div class="row align-items-center mb-4">
+            <div class="col-6">
+              <label
+                class="form-label fw-bold text-nowrap"
+                for="employees"
+                style="font-size: 0.9rem"
+                >Number of employees</label
+              >
+              <select
+                class="form-select"
+                id="employees"
+                name="# of Employees"
+              >
+                <option selected></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label
+                class="form-label fw-bold"
+                for="carry-status"
+                >Carry Status</label
+              >
+              <select
+                class="form-select"
+                id="carry-status"
+                name="Carry Status"
+              >
+                <option selected></option>
+                <option value="Armed">Armed</option>
+                <option value="Unarmed">Unarmed</option>
+              </select>
+            </div>
+          </div>
+          <hr />
+          <div class="row mb-4">
+            <div class="col">
+              <label
+                for="location"
+                class="form-label fw-bold"
+                >Address</label
+              >
+              <input
+                id="location"
+                name="Location"
+                type="text"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="mb-4 row gy-5 justify-content-between align-items-center">
+            <div class="col-6">
+              <label
+                for="start-time"
+                class="form-label fw-bold"
+                >Start Time</label
+              >
+              <input
+                type="time"
+                name="Start Time"
+                id="start-time"
+                aria-label="Start Time"
+                class="form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label
+                for="end-time"
+                class="form-label fw-bold"
+                >End Time</label
+              >
+              <input
+                type="time"
+                name="End Time"
+                id="end-time"
+                aria-label="End Time"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-6">
+              <label
+                for="date-from"
+                class="form-label fw-bold"
+                >From</label
+              >
+              <input
+                type="date"
+                id="date-from"
+                name="From"
+                aria-label="From"
+                class="form-control"
+                placeholder="From"
+              />
+            </div>
+            <div class="col-6">
+              <label
+                for="date-to"
+                class="form-label fw-bold text-nowrap"
+                style="font-size: 0.9rem"
+                >To (blank if same day)</label
+              >
+              <input
+                type="date"
+                id="date-to"
+                name="To"
+                aria-label="To"
+                class="form-control"
+              />
+            </div>
+          </div>
+
+          <div class="mw-100">
+            <!-- <div
+              class="g-recaptcha"
+              style="scale: 0.9; margin: auto"
+              data-sitekey="6Ld8aKQpAAAAAC6H49F10Zs8HT6sTZU4TsVQNmuq"
+            ></div> -->
+          </div>
+          <div class="d-grid">
+            <button
+              type="submit"
+              class="btn btn-info fw-bold mt-3"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
-    <footer
-      class="mw-100 py-4 bg-black shadow text-center bottom-0 fs-6 mt-5 d-flex justify-content-around align-items-center"
-    >
-      <a href=""><i class="fa-brands fa-instagram"></i></a>
-      <a href=""><i class="fa-brands fa-facebook"></i></a>
-      <a href=""><i class="fa-solid fa-envelope"></i></a>
-    </footer>
+      <footer
+        class="mw-100 py-4 bg-black shadow text-center bottom-0 fs-6 mt-5 d-flex justify-content-around align-items-center"
+      >
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-solid fa-envelope"></i></a>
+      </footer>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+      ></script>
+    </div>
   </body>
 </html>

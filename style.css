@@ -31,3 +31,48 @@ footer i::before {
   font-size: 2rem;
   color: rgb(0, 188, 235);
 }
+
+@media (max-width: 576px) {
+  .flex-sm-column {
+    flex-direction: column !important;
+  }
+
+  .col-sm-12 {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 690px) {
+  #hero-section::before {
+    background-position: left 40%;
+  }
+
+  div#section-1 img#iceman-logo,
+  div#section-3 img#gang-1 {
+    height: calc(100% / 3);
+  }
+}
+@media (max-width: 550px) {
+  div#section-1 img#iceman-logo {
+    height: calc(100% / 5);
+  }
+
+  div#section-3 img#gang-1 {
+    height: calc(100% / 4);
+  }
+}
+
+@media (max-width: 450px) {
+  div#section-1 img#iceman-logo {
+    height: calc(100% / 8);
+  }
+
+  div#section-3 img#gang-1 {
+    height: calc(100% / 5);
+  }
+}
+@media (max-width: 350px) {
+  div#section-1 img#iceman-logo {
+    height: calc(100% / 20);
+  }
+}
