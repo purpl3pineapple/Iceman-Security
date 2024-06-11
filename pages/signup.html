@@ -28,9 +28,13 @@
       src="../submission.js"
       defer
     ></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script
+      src="https://www.google.com/recaptcha/api.js"
+      async
+      defer
+    ></script>
   </head>
-  <body>
+  <body class="vw-100">
     <nav class="navbar navbar-expand-lg bg-black px-3 mb-5">
       <button
         class="navbar-toggler"
@@ -279,12 +283,27 @@
             </div>
           </div>
 
-          <div class="mw-100">
-            <!-- <div
+          <div class="w-auto mx-auto d-flex align-items-center">
+            <div
               class="g-recaptcha"
-              style="scale: 0.9; margin: auto"
-              data-sitekey="6Ld8aKQpAAAAAC6H49F10Zs8HT6sTZU4TsVQNmuq"
-            ></div> -->
+              data-sitekey="6LeEjPUpAAAAANX9CpWEeG_brOUxtiI13SmdzrI2"
+              data-callback="recaptcha_validated"
+              data-error-callback="recaptcha_failed"
+              data-expired-callback="recaptcha_expired"
+              data-theme="dark"
+            ></div>
+            <div
+              id="captcha-success"
+              class="d-none ms-5 p-3 fs-5 bg-success-subtle text-success-emphasis"
+            >
+              recaptcha successfully validated!
+            </div>
+            <div
+              id="captcha-failed"
+              class="d-none ms-5 p-3 fs-5 bg-danger-subtle text-danger-emphasis"
+            >
+              recaptcha failed
+            </div>
           </div>
           <div class="d-grid">
             <button
