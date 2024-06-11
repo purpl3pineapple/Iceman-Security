@@ -27,6 +27,7 @@ function recaptcha_expired() {
  */
 window.addEventListener("load", () => {
   const form = document.querySelector("form");
+  alert(CAPTCHA);
 
   form.addEventListener("submit", e => {
     e.preventDefault();
