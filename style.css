@@ -20,8 +20,8 @@ body {
   font-weight: 900;
   -webkit-text-fill-color: rgb(0, 188, 235);
   color: rgb(0, 188, 235);
-  text-shadow: -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke,
-    -1px 1px 0 whitesmoke, 1px 1px 0 whitesmoke;
+  text-shadow: -0.8px -0.8px 0 whitesmoke, 0.8px -0.8px 0 whitesmoke,
+    -0.8px 0.8px 0 whitesmoke, 0.8px 0.8px 0 whitesmoke;
 }
 
 #hero-section h1 {
