@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 #hero-section::before {
   content: "";
   position: absolute;
@@ -64,15 +68,20 @@ footer i::before {
 
 @media (max-width: 450px) {
   div#section-1 img#iceman-logo {
-    height: calc(100% / 8);
+    height: calc(100% / 9);
   }
 
   div#section-3 img#gang-1 {
-    height: calc(100% / 5);
+    height: calc(100% / 6);
   }
 }
 @media (max-width: 350px) {
   div#section-1 img#iceman-logo {
-    height: calc(100% / 20);
+    height: calc(100% / 22);
+  }
+}
+@media screen and (width >= 800px) and (height >= 1000px) {
+  body {
+    height: 100vh;
   }
 }
