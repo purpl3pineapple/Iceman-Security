@@ -22,41 +22,45 @@ function recaptcha_expired() {
   captcha_failed.classList.add("d-none");
 }
 
-/**
- * Source: {@link https://codepen.io/levinunnink-the-bashful/pen/YzxPyoG?editors=0010}
- */
+function addSubmission(e, body) {
+  e.preventDefault();
+  if (CAPTCHA === null) {
+    captcha_failed.innerHTML = "Please complete the recaptcha.";
+    captcha_failed.classList.remove("d-none");
+
+    setTimeout(() => {
+      captcha_failed.classList.add("d-none");
+    }, 5000);
+    return;
+  }
+
+  const empty = [...body.entries()].filter(([, entry]) => !entry);
+  const emptyKeys = empty.map(([key]) => key);
+
+  if (empty.length) {
+    alert(`Please fill in:\n${emptyKeys.join("\n")}`);
+    return;
+  }
+
+  fetch(e.target.action, {
+    method: "POST",
+    cache: "no-cache",
+    mode: "cors",
+    body,
+  })
+    .then(async result => {
+      if (result.ok) {
+        alert("Your request was successfully submitted!");
+        location.reload();
+      } else {
+        throw new Error("Bad network response");
+      }
+    })
+    .catch(e => console.log({ POST_ERROR: e.message }));
+}
+
 window.addEventListener("load", () => {
   const form = document.querySelector("form");
-  alert(CAPTCHA);
 
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    if (CAPTCHA === null) {
-      captcha_failed.innerHTML = "Please complete the recaptcha.";
-      captcha_failed.classList.remove("d-none");
-
-      setTimeout(() => {
-        captcha_failed.classList.add("d-none");
-      }, 5000);
-      return;
-    }
-    const action = e.target.action;
-    const body = new FormData(form);
-
-    fetch(action, {
-      method: "POST",
-      cache: "no-cache",
-      mode: "cors",
-      body,
-    })
-      .then(async result => {
-        if (result.ok) {
-          alert("Your request was successfully submitted!");
-          location.reload();
-        } else {
-          throw new Error("Bad network response");
-        }
-      })
-      .catch(e => console.log({ POST_ERROR: e.message }));
-  });
+  form.addEventListener("submit", e => addSubmission(e, new FormData(form)));
 });
