@@ -34,7 +34,7 @@ function addSubmission(e, body) {
   }
 
   const empty = [...body.entries()].filter(([, entry]) => !entry);
-  const emptyKeys = empty.map(([key]) => key);
+  const emptyKeys = empty.filter(([key]) => key !== "To").map(([key]) => key);
 
   if (empty.length) {
     alert(`Please fill in:\n${emptyKeys.join("\n")}`);
