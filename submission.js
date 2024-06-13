@@ -6,7 +6,6 @@ async function recaptcha_validated() {
   CAPTCHA = true;
   captcha_success.classList.remove("d-none");
   captcha_failed.classList.add("d-none");
-  setTimeout(recaptcha_expired, 120_000);
 }
 
 function recaptcha_failed() {
