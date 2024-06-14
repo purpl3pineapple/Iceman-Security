@@ -38,6 +38,12 @@ footer i::before {
   color: rgb(0, 188, 235);
 }
 
+img#white-hoodie,
+img#gang2 {
+  height: 25em;
+  width: 25em;
+}
+
 @media (max-width: 576px) {
   .flex-sm-column {
     flex-direction: column !important;
@@ -45,6 +51,10 @@ footer i::before {
 
   .col-sm-12 {
     width: 100% !important;
+  }
+
+  img#gang2 {
+    width: 100%;
   }
 }
 
