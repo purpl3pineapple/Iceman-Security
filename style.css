@@ -95,11 +95,11 @@ img#gang2 {
 
 @media (max-width: 450px) {
   div#section-1 img#iceman-logo {
-    height: calc(100% / 9);
+    height: 50%;
   }
 
   div#section-3 img#gang-1 {
-    height: calc(100% / 6);
+    height: 90%;
   }
 }
 
