@@ -18,10 +18,10 @@ body {
 
 .hero-ice-blue-text {
   font-weight: 900;
-  -webkit-text-fill-color: rgb(0, 188, 235);
-  color: rgb(0, 188, 235);
+  -webkit-text-fill-color: rgb(0, 188, 235) !important;
+  color: rgb(0, 188, 235) !important;
   text-shadow: -0.8px -0.8px 0 whitesmoke, 0.8px -0.8px 0 whitesmoke,
-    -0.8px 0.8px 0 whitesmoke, 0.8px 0.8px 0 whitesmoke;
+    -0.8px 0.8px 0 whitesmoke, 0.8px 0.8px 0 whitesmoke !important;
 }
 
 #hero-section h1 {
@@ -44,6 +44,10 @@ img#gang2 {
   width: 25em;
 }
 
+#archive-pics img {
+  height: 25rem;
+}
+
 @media (max-width: 576px) {
   .flex-sm-column {
     flex-direction: column !important;
@@ -55,6 +59,16 @@ img#gang2 {
 
   img#gang2 {
     width: 100%;
+  }
+
+  #archive-pics img {
+    height: 18rem;
+    width: 100% !important;
+  }
+
+  #notable-clients h4,
+  #notable-clients ul {
+    margin-left: 0 !important;
   }
 }
 
