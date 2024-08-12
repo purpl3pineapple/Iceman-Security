@@ -2,7 +2,15 @@ let CAPTCHA = null;
 const captcha_success = document.getElementById("captcha-success");
 const captcha_failed = document.getElementById("captcha-failed");
 
-async function recaptcha_validated() {
+async function recaptcha_validated(key) {
+  /* const response = await fetch(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRET}&response=${key}`,
+    {
+      method: "POST",
+    }
+  ); */
+  //console.log({ response });
+
   CAPTCHA = true;
   captcha_success.classList.remove("d-none");
   captcha_failed.classList.add("d-none");
